@@ -4,7 +4,7 @@ Donate link: http://bueltge.de/wunschliste/
 Tags: offline
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 0.5
+Stable tag: 0.6
 
 Deactivate autoupdate for core, plugins and themes
 
@@ -18,6 +18,10 @@ Deactivate autoupdate for core, plugins and themes
 1. Add the new Template Tags to your templates
 
 == Changelog ==
+= v0.6 (01/06/2011) =
+* Feature: block external URL requests 
+* Feature: disable transports
+
 = v0.5 (01/04/2011) =
 * Maintenance: update for WP 3.0, WP 3.1-RC2
 

@@ -2,18 +2,38 @@
 /**
  * @package WP Offline
  * @author Frank Bültge
- * @version 0.5
+ * @version 0.6
  */
 
 /*
 Plugin Name: WP Offline
 Plugin URI: http://bueltge.de/wordpress-27-offline-nutzen/710/
 Description: Deactivate autoupdate for core, plugins and themes
-Version: 0.5
+Version: 0.6
 Author: Frank B&uuml;ltge
 Author URI: http://bueltge.de/
-Last Change: 04.01.2011
+Last Change: 05.01.2011
 */
+
+// block external URL requests 
+define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
+define( 'WP_ACCESSIBLE_HOSTS', FALSE );
+define( 'FS_METHOD', FALSE );
+
+// HTTP Related Filters
+// disable transports
+// see wp-includes/class-http.php for filter hooks
+add_filter( 'http_request_timeout', '__return_zero');
+add_filter( 'http_request_redirection_count', '__return_zero' );
+add_filter( 'lock_local_requests', '__return_true' );
+add_filter( 'use_fsockopen_transport', '__return_false' );
+add_filter( 'use_http_extension_transport', '__return_false' );
+add_filter( 'use_curl_transport', '__return_false' );
+add_filter( 'use_streams_transport', '__return_false' );
+add_filter( 'use_fopen_transport', '__return_false' );
+add_filter( 'use_fsockopen_transport', '__return_false' );
+add_filter( 'https_local_ssl_verify', '__return_false' );
+add_filter( 'https_ssl_verify', '__return_false' );
 
 // see wp-includes/update.php for init hooks
 remove_action( 'admin_init', '_maybe_update_core' );
