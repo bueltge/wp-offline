@@ -19,7 +19,7 @@ define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
 define( 'WP_ACCESSIBLE_HOSTS', FALSE );
 define( 'FS_METHOD', FALSE );
 // disable cron
-define('DISABLE_WP_CRON', true);
+define('DISABLE_WP_CRON', TRUE);
 
 // HTTP Related Filters
 // disable transports
