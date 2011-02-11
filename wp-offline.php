@@ -2,23 +2,24 @@
 /**
  * @package WP Offline
  * @author Frank Bültge
- * @version 0.6
  */
 
 /*
 Plugin Name: WP Offline
 Plugin URI: http://bueltge.de/wordpress-27-offline-nutzen/710/
 Description: Deactivate autoupdate for core, plugins and themes
-Version: 0.6
+Version: 0.7
 Author: Frank B&uuml;ltge
 Author URI: http://bueltge.de/
-Last Change: 05.01.2011
+Last Change: 11.02.2011
 */
 
 // block external URL requests 
 define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
 define( 'WP_ACCESSIBLE_HOSTS', FALSE );
 define( 'FS_METHOD', FALSE );
+// disable cron
+define('DISABLE_WP_CRON', true);
 
 // HTTP Related Filters
 // disable transports

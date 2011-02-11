@@ -4,7 +4,7 @@ Donate link: http://bueltge.de/wunschliste/
 Tags: offline
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 0.6
+Stable tag: 0.7
 
 Deactivate autoupdate for core, plugins and themes
 
@@ -18,6 +18,9 @@ Deactivate autoupdate for core, plugins and themes
 1. Add the new Template Tags to your templates
 
 == Changelog ==
+= v0.7 (02/11/2011)=
+* Feature: disable cron via constant
+
 = v0.6 (01/06/2011) =
 * Feature: block external URL requests 
 * Feature: disable transports
