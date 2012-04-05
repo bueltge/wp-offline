@@ -11,6 +11,8 @@ Deactivate autoupdate for core, plugins, themes and http calls
 == Description ==
 Deactivate autoupdate for core, plugins,themes and http calls
 
+See also the [Repo](https://github.com/bueltge/WP-Offline/) on github for issues and fork it for your improvements; also you can see an detailed [changelog](https://github.com/bueltge/WP-Offline/commits/master) from the commits.
+
 == Installation ==
 1. Unpack the download-package
 1. Upload all files to the `/wp-content/plugins/` directory, include folders
