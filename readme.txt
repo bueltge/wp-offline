@@ -3,13 +3,13 @@ Contributors: Bueltge
 Donate link: http://bueltge.de/wunschliste/
 Tags: offline
 Requires at least: 3.0
-Tested up to: 3.1
-Stable tag: 0.7
+Tested up to: 3.3
+Stable tag: 0.8
 
-Deactivate autoupdate for core, plugins and themes
+Deactivate autoupdate for core, plugins, themes and http calls
 
 == Description ==
-Deactivate autoupdate for core, plugins and themes
+Deactivate autoupdate for core, plugins,themes and http calls
 
 == Installation ==
 1. Unpack the download-package
@@ -18,6 +18,9 @@ Deactivate autoupdate for core, plugins and themes
 1. Add the new Template Tags to your templates
 
 == Changelog ==
+= v0.8 (04/05/2012) =
+* Add filter `pre_http_request` for disable http calls
+
 = v0.7 (02/11/2011)=
 * Feature: disable cron via constant
 
