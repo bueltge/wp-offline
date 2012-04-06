@@ -1,26 +1,29 @@
 <?php
 /**
- * @package WP Offline
- * @author Frank Bültge
+ * @package    WordPress
+ * @subpackage WP Offline (plugin)
+ * @author     Frank Bültge
  */
 
-/*
-Plugin Name: WP Offline
-Plugin URI: http://bueltge.de/wordpress-27-offline-nutzen/710/
-Description: Deactivate autoupdate for core, plugins and themes
-Version: 0.7
-Author: Frank B&uuml;ltge
-Author URI: http://bueltge.de/
-Last Change: 11.02.2011
-*/
+/**
+ * Plugin Name: WP Offline
+ * Plugin URI:  http://bueltge.de/wordpress-27-offline-nutzen/710/
+ * Description: Deactivate autoupdate for core, plugins, themes and disable http calls
+ * Version:     0.8
+ * Author:      Frank B&uuml;ltge
+ * Author URI:  http://bueltge.de/
+ * Last Change: 04/05/2012
+ */
 
 // block external URL requests 
 define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
 define( 'WP_ACCESSIBLE_HOSTS', FALSE );
 define( 'FS_METHOD', FALSE );
 // disable cron
-define('DISABLE_WP_CRON', TRUE);
+define( 'DISABLE_WP_CRON', TRUE );
 
+// disable http calls
+add_filter( 'pre_http_request', '__return_true', 100 );
 // HTTP Related Filters
 // disable transports
 // see wp-includes/class-http.php for filter hooks
@@ -55,5 +58,4 @@ remove_action( 'admin_init', '_maybe_update_themes' );
 remove_action( 'wp_update_themes', 'wp_update_themes' );
 wp_clear_scheduled_hook( 'wp_update_themes' );
 
-remove_action('init', 'wp_schedule_update_checks');
-?>
+remove_action( 'init', 'wp_schedule_update_checks' );
