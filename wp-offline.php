@@ -22,8 +22,9 @@ define( 'FS_METHOD', FALSE );
 // disable cron
 define( 'DISABLE_WP_CRON', TRUE );
 
-// disable http calls
+// disable http calls, maybe the same how the const WP_HTTP_BLOCK_EXTERNAL
 add_filter( 'pre_http_request', '__return_true', 100 );
+
 // HTTP Related Filters
 // disable transports
 // see wp-includes/class-http.php for filter hooks
