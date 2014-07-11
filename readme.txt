@@ -3,13 +3,14 @@ Contributors: Bueltge
 Donate link: http://bueltge.de/wunschliste/
 Tags: offline
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 0.8
+Tested up to: 4.0-beta
+Stable tag: 0.9
 
-Deactivate autoupdate for core, plugins, themes and http calls
+Block external calls, like http for scripts, styles, updates.
 
 == Description ==
 Deactivate autoupdate for core, plugins,themes and http calls
+Replaces also all instances of Gravatar with a empty value.
 
 See also the [Repo](https://github.com/bueltge/WP-Offline/) on github for issues and fork it for your improvements; also you can see an detailed [changelog](https://github.com/bueltge/WP-Offline/commits/master) from the commits.
 
@@ -20,6 +21,10 @@ See also the [Repo](https://github.com/bueltge/WP-Offline/) on github for issues
 1. Add the new Template Tags to your templates
 
 == Changelog ==
+= v0.9 (07/11/2014) =
+* Set empty avatar
+* remove external scripts, styles
+
 = v0.8 (04/05/2012) =
 * Add filter `pre_http_request` for disable http calls
 
