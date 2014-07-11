@@ -136,13 +136,14 @@ class Offline_Mode {
 
 			// if external url, then set src attribute to null
 			if ( strpos( $attributes->src, '//' ) !== FALSE ) {
-				$this->externel_styles[] = $attributes->handle;
+				$this->externel_styles[]                        = $attributes->handle;
 				$styles->registered[ $attributes->handle ]->src = NULL;
 			}
 		}
 
 		return $styles;
 	}
+
 	/**
 	 * Filter default scripts, unset external url
 	 *
@@ -161,7 +162,7 @@ class Offline_Mode {
 
 			// if external url, then set src attribute to null
 			if ( strpos( $attributes->src, '//' ) !== FALSE ) {
-				$this->externel_scripts[] = $attributes->handle;
+				$this->externel_scripts[]                        = $attributes->handle;
 				$scripts->registered[ $attributes->handle ]->src = NULL;
 			}
 		}
