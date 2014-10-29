@@ -9,10 +9,10 @@
  * Plugin Name: Offline Mode
  * Plugin URI:  http://bueltge.de/wordpress-27-offline-nutzen/710/
  * Description: Deactivate autoupdate for core, plugins, themes and disable http calls
- * Version:     0.9
+ * Version:     0.10
  * Author:      Frank Bültge
  * Author URI:  http://bueltge.de/
- * Last Change: 07/11/2014
+ * Last Change: 10/29/2014
  */
 
 ! defined( 'ABSPATH' ) && exit;
@@ -135,7 +135,8 @@ class Offline_Mode {
 		foreach ( $styles->registered as $style => $attributes ) {
 
 			// if external url, then set src attribute to null
-			if ( strpos( $attributes->src, '//' ) !== FALSE ) {
+			if ( strpos( $attributes->src, '//' ) !== FALSE &&
+					 strpos( $attributes->src, esc_url( $GLOBALS[ '_SERVER' ][ 'HTTP_HOST' ] ) ) === FALSE ) {
 				$this->externel_styles[]                        = $attributes->handle;
 				$styles->registered[ $attributes->handle ]->src = NULL;
 			}
@@ -161,7 +162,8 @@ class Offline_Mode {
 		foreach ( $scripts->registered as $script => $attributes ) {
 
 			// if external url, then set src attribute to null
-			if ( strpos( $attributes->src, '//' ) !== FALSE ) {
+			if ( strpos( $attributes->src, '//' ) !== FALSE &&
+					 strpos( $attributes->src, esc_url( $GLOBALS[ '_SERVER' ][ 'HTTP_HOST' ] ) ) !== FALSE ) {
 				$this->externel_scripts[]                        = $attributes->handle;
 				$scripts->registered[ $attributes->handle ]->src = NULL;
 			}
