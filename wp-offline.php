@@ -2,7 +2,7 @@
 /**
  * @package    WordPress
  * @subpackage WP Offline Mode (plugin)
- * @author     Frank Bültge
+ * @author     Frank Bültge <frank@bueltge.de>
  */
 
 /**
@@ -12,17 +12,19 @@
  * Version:     0.10
  * Author:      Frank Bültge
  * Author URI:  http://bueltge.de/
- * Last Change: 10/29/2014
+ * Last Change: 07.11.2014
  */
 
 ! defined( 'ABSPATH' ) && exit;
 
 // block external URL requests
-define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
-define( 'WP_ACCESSIBLE_HOSTS', FALSE );
-define( 'FS_METHOD', FALSE );
+defined( 'WP_HTTP_BLOCK_EXTERNAL' ) || define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
+// Block external URL requests
+defined( 'WP_ACCESSIBLE_HOSTS' ) || define( 'WP_ACCESSIBLE_HOSTS', FALSE );
+// forces the filesystem method
+defined( 'FS_METHOD' ) || define( 'FS_METHOD', FALSE );
 // disable cron
-define( 'DISABLE_WP_CRON', TRUE );
+defined( 'DISABLE_WP_CRON' ) || define( 'DISABLE_WP_CRON', TRUE );
 
 add_action( 'plugins_loaded', array( 'Offline_Mode', 'get_object' ), 10 );
 
@@ -33,7 +35,7 @@ class Offline_Mode {
 	 *
 	 * @var    String
 	 */
-	static protected $class_object = NULL;
+	protected static $class_object = NULL;
 
 	/**
 	 * Save unset scripts
