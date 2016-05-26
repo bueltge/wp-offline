@@ -103,28 +103,10 @@ class Offline_Mode {
 
 		remove_action( 'init', 'wp_schedule_update_checks' );
 
-		add_filter( 'get_avatar', array( $this, 'replace_avatar' ), 1, 5 );
+		add_filter( 'get_avatar', '__return_empty_string', 1 );
 
 		add_action( 'wp_default_styles', array( $this, 'block_styles' ), 9999 );
 		add_action( 'wp_default_scripts', array( $this, 'block_scripts' ), 9999 );
-	}
-
-	/**
-	 * Filter the avatar, return nothing
-	 *
-	 * @param string            $avatar      Image tag for the user's avatar.
-	 * @param int|object|string $id_or_email A user ID, email address, or comment object.
-	 * @param int               $size        Square avatar width and height in pixels to retrieve.
-	 * @param string            $alt         Alternative text to use in the avatar image tag.
-	 *                                       Default empty.
-	 *
-	 * @return string
-	 */
-	public function replace_avatar( $avatar, $id_or_email, $size, $default, $alt ) {
-
-		$avatar = '';
-
-		return $avatar;
 	}
 
 	public function block_styles( $styles ) {
