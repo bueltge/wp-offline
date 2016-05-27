@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
  * @package    WordPress
@@ -36,7 +35,7 @@ class Offline_Mode {
 	 *
 	 * @var    String
 	 */
-	protected static $class_object = NULL;
+	protected static $class_object;
 
 	/**
 	 * Save unset scripts
@@ -53,7 +52,7 @@ class Offline_Mode {
 	 */
 	public static function get_object() {
 
-		if ( NULL == self::$class_object ) {
+		if ( NULL === self::$class_object ) {
 			self::$class_object = new self;
 		}
 
@@ -105,7 +104,7 @@ class Offline_Mode {
 
 		remove_action( 'init', 'wp_schedule_update_checks' );
 
-		add_filter( 'get_avatar', '__return_empty_string', );
+		add_filter( 'get_avatar', '__return_empty_string', 1 );
 
 		add_action( 'wp_default_styles', array( $this, 'block_styles' ), 9999 );
 		add_action( 'wp_default_scripts', array( $this, 'block_scripts' ), 9999 );
