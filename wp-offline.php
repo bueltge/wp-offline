@@ -12,33 +12,34 @@
  * Version:     1.0.0
  * Author:      Frank Bültge
  * Author URI:  http://bueltge.de/
- * Last Change: 2016-05-27
+ * Last Change: 2016-07-31
  */
 
 ! defined( 'ABSPATH' ) && exit;
 
 // block external URL requests
-defined( 'WP_HTTP_BLOCK_EXTERNAL' ) || define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
+! defined( 'WP_HTTP_BLOCK_EXTERNAL' ) && define( 'WP_HTTP_BLOCK_EXTERNAL', TRUE );
 // Block external URL requests
-defined( 'WP_ACCESSIBLE_HOSTS' ) || define( 'WP_ACCESSIBLE_HOSTS', FALSE );
+! defined( 'WP_ACCESSIBLE_HOSTS' ) && define( 'WP_ACCESSIBLE_HOSTS', FALSE );
 // forces the filesystem method
-defined( 'FS_METHOD' ) || define( 'FS_METHOD', FALSE );
+! defined( 'FS_METHOD' ) && define( 'FS_METHOD', FALSE );
 // disable cron
-defined( 'DISABLE_WP_CRON' ) || define( 'DISABLE_WP_CRON', TRUE );
+! defined( 'DISABLE_WP_CRON' ) && define( 'DISABLE_WP_CRON', TRUE );
 
 add_action( 'plugins_loaded', array( 'Offline_Mode', 'get_object' ), 10 );
 
 class Offline_Mode {
 
 	/**
-	 * The class object
+	 * The class object.
 	 *
 	 * @var    String
 	 */
 	protected static $class_object;
 
 	/**
-	 * Save unset scripts
+	 * Save unset scripts.
+	 *
 	 * @var array
 	 */
 	protected $externel_scripts = array();
@@ -46,9 +47,9 @@ class Offline_Mode {
 	protected $externel_styles = array();
 
 	/**
-	 * Load the object and get the current state
+	 * Load the object and get the current state.
 	 *
-	 * @return String $class_object
+	 * @return string $class_object
 	 */
 	public static function get_object() {
 
@@ -111,7 +112,7 @@ class Offline_Mode {
 	}
 
 	/**
-	 * Filter default stylesheets, unset external url
+	 * Filter default stylesheets, unset external url.
 	 *
 	 * @param $styles
 	 *
@@ -138,7 +139,7 @@ class Offline_Mode {
 	}
 
 	/**
-	 * Filter default scripts, unset external url
+	 * Filter default scripts, unset external url.
 	 *
 	 * @param $scripts
 	 *

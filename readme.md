@@ -1,17 +1,13 @@
 # Offline Mode for WordPress
-Block external calls, like http for scripts, styles, updates. Helpful for local development, audits and also for intranet solution.
+Block external calls, like http for scripts, styles and updates. Helpful for local development, audits and also for intranet solutions.
 
 ## Description
-Deactivate autoupdate for core, plugins,themes and http calls
+Deactivate autoupdate for core, plugins, themes and http calls.
 Replaces also all instances of Gravatar with a empty value.
 
 ### License
 Good news, this plugin is free for everyone! Since it's released under the GPL, 
-you can use it free of charge on your personal or commercial blog. But if you enjoy this plugin, 
-you can thank me and leave a 
-[small donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6069955 "Paypal Donate link") 
-for the time I've spent writing and supporting this plugin. 
-And I really don't want to know how many hours of my life this plugin has already eaten ;)
+you can use it free of charge on your personal or commercial blog.
 
 ### Contact & Feedback
 The plugin is designed and developed by me [Frank Bültge](http://bueltge.de), [G+ Page](https://plus.google.com/111291152590065605567/about?rel=author)
