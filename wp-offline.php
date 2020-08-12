@@ -11,7 +11,7 @@
  * Description: Deactivate autoupdate for core, plugins, themes and disable http calls
  * Version:     1.0.1
  * Author:      Frank Bültge
- * Author URI:  http://bueltge.de/
+ * Author URI:  https://bueltge.de/
  * Last Change: 2017-11-07
  */
 
