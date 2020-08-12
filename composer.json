@@ -1,10 +1,10 @@
 {
-	"name": "bueltge/WP-Offline",
+	"name": "bueltge/wp-offline",
 	"description": "Block external calls, like http for scripts, styles and updates. Helpful for local development, audits and also for intranet solutions.",
 	"minimum-stability": "stable",
 	"license": "GPL-2.0-or-later",
 	"type": "wordpress-plugin",
-	"homepage": "https://github.com/bueltge/WP-Offline",
+	"homepage": "https://github.com/bueltge/wp-offline",
 	"authors": [
 		{
 			"name": "Frank Bültge",
